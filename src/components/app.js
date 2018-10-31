@@ -4,7 +4,7 @@ import Timer from "./timer";
 export default class App extends Component {
   render() {
     return (
-      <div>React simple starter
+      <div>React simple Timer!
       <Timer />
       </div>
     );

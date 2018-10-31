@@ -18,6 +18,7 @@ export default class Timer02 extends Component {
 
   componentWillMount() {
     this.getCurrentTime();
+    console.log('getDate!!!!!!!!!',new Date()); // Tue Oct 30 2018 23:21:11 GMT-0700
   }
 
   getCurrentTime = () => {

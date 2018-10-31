@@ -3,7 +3,12 @@ import React, { Component } from "react";
 export default class Timer02 extends Component {
   constructor(props) {
     super(props);
-    this.state = { currentTime: null, currentDay: null };
+    this.state = { 
+        currentTime: null, 
+        currentDay: null
+     };
+     this.dateObject = {}
+
     this.daysArray = [
       "sunday",
       "monday",
@@ -19,6 +24,18 @@ export default class Timer02 extends Component {
   componentWillMount() {
     this.getCurrentTime();
     console.log('getDate!!!!!!!!!',new Date()); // Tue Oct 30 2018 23:21:11 GMT-0700
+    console.log("{ dateObject } !!!!", this.dateObject);
+    this.makeDateObject();
+    console.log('print this.dateObect!!!!', this.dateObject);
+  }
+  makeDateObject() {
+      const date_date = new Date();
+      this.dateObject = {
+      hour: date_date.getHours(),
+      min: date_date.getMinutes(),
+      sec: date_date.getSeconds(),
+      amPm: date_date.getHours() >= 12 ? 'pm' : 'am'
+    };
   }
 
   getCurrentTime = () => {
